@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>反欺诈风控提交</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="common/css/globle.css" />
+	</head>
+
+	<body>
+		<div class="layui-container layui-fluid">
+			<div class="content">
+				<blockquote class="layui-elem-quote">反欺诈风控提交</blockquote>
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">请求唯一ID</label>
+						<div class="layui-input-block">
+							<input type="text" name="requestId" lay-verify="required" autocomplete="off" placeholder="请求唯一ID(必填)" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">申请人真实姓名</label>
+						<div class="layui-input-block">
+							<input type="text" name="userName" value="" lay-verify="required" autocomplete="off" placeholder="申请人真实姓名(必填)" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">申请人身份证号码</label>
+						<div class="layui-input-block">
+							<input type="text" name="idNumber" value="" lay-verify="required" autocomplete="off" placeholder="申请人身份证号码(必填)" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">申请人手机号码</label>
+						<div class="layui-input-block">
+							<input type="text" name="phone" value="" lay-verify="required" autocomplete="off" placeholder="申请人手机号码(必填)" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">申请金额</label>
+						<div class="layui-input-block">
+							<input type="text" name="amount" autocomplete="off" placeholder="申请金额" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">公司编码</label>
+						<div class="layui-input-block">
+							<input type="text" name="companyCode" value="test" autocomplete="off" placeholder="公司分配的代码(必填)" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">服务编码</label>
+						<div class="layui-input-block">
+							<input type="text" name="method" value="submit_risk_v1.0.0" autocomplete="off" placeholder="运营商授权服务编码(必填)" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">回调地址</label>
+						<div class="layui-input-block">
+							<input type="text" name="noticeUrl" value="http://127.0.0.1" autocomplete="off" placeholder="风控结果回调地址(必填)" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="risk-submit-fraud">立即提交</button>
+					</div>
+
+				</form>
+			</div>
+			<footer class="footer">
+				<blockquote class="layui-elem-quote center">
+					<div class="layui-row">
+						<b>Version</b> 1.0.0
+					</div>
+					<strong>Copyright &copy; 2017.12 <a href="javascript:void(0);">风控系统</a></strong> All rights reserved.
+				</blockquote>
+			</footer>
+		</div>
+
+		<script type="text/javascript" src="lib/layui/layui.js"></script>
+		<script src="common/globle.js"></script>
+		<script type="text/javascript" src="js/test/risk-submit-fraud.js"></script>
+
+	</body>
+
+</html>
