@@ -1,0 +1,304 @@
+<!--
+	作者：storys_zhang@aliyun.com
+	时间：2018-03-12
+	描述：运营商授权
+-->
+	<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>风控报告API接口文档</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="../../lib/image/favicon.ico" rel="SHORTCUT ICON" />
+		<link rel="stylesheet" href="../../lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="../../common/css/globle.css" />
+	</head>
+
+	<body>
+		<div class="layui-container doc">
+			<h2>风控报告</h1>
+		<hr>
+		<blockquote class="layui-elem-quote layui-text">
+			风控报告信息包含运营商报告<a id="to-risk-report" href="javascript:void(0);">H5风控报告测试入口（需要风控编号查看）</a>
+		</blockquote>
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="get">开始接入</a></legend>
+		</fieldset>
+		<div class="site-text">
+		<p>欢迎您成为快睿登的商户，在开始使用接口前请先确认已完成以下事项：</p>
+		<p>1、开通接口权限;</p>
+		<p>2、平台提供h5方式的测试页面;</p>
+		<p>3、具体接口问题，若无法解决请随时联系我们。</p>
+		</div>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="info-message">接口信息</a></legend>
+		</fieldset>
+		<table id="t-api-message" ></table>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="request-param">请求参数</a></legend>
+		</fieldset>
+		<table id="t-request-param" ></table>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="respone-param">响应参数</a></legend>
+		</fieldset>
+		<div class="site-text">
+		<p><a href="../../lib/data/doc/risk-report/risk-report-response.xlsx" style="color: red;">返回字段参考Excel<i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">&#xe61e;</i></a></p>
+		</div>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="request-example">请求示例</a></legend>
+		</fieldset>
+		<div class="site-text">
+			<p>Java方式请求</p>
+		</div>
+		<pre class="layui-code"></pre>
+		
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="response-example">响应示例</a></legend>
+		</fieldset>
+		<div class="site-text">
+			<p>返回json格式数据code等于0，获取风控报告信息</p>
+		</div>
+		 <pre class="layui-code">
+{
+  "code": 0,
+  "data": {
+    "addressModelList": [
+      {
+        "cityName": "string",
+        "countyName": "string",
+        "detail": "string",
+        "provinceName": "string",
+        "type": "string"
+      }
+    ],
+    "blackListModel": {
+      "applyUserBlackListModelList": [
+        {
+          "level": "string",
+          "number": "string",
+          "remarks": "string",
+          "source": "string"
+        }
+      ],
+      "applyUserHit": "string",
+      "contactsBlackListModelList": [
+        {
+          "level": "string",
+          "number": "string",
+          "remarks": "string",
+          "source": "string"
+        }
+      ],
+      "contactsHitCount": 0
+    },
+    "consumptionPowerModelList": [
+      {
+        "item": "string",
+        "value": "string"
+      }
+    ],
+    "contactsModelList": [
+      {
+        "callRank": "string",
+        "name": "string",
+        "relation": "string",
+        "telPhone": "string"
+      }
+    ],
+    "crawlMultiloanModel": [
+      {
+        "healthReferScore": "string",
+        "item": "string",
+        "score": "string"
+      }
+    ],
+    "debtSeverityModel": [
+      {
+        "item": "string",
+        "score": "string"
+      }
+    ],
+    "deviceModelList": [
+      {
+        "healthReferScore": "string",
+        "item": "string",
+        "score": "string"
+      }
+    ],
+    "mobileOperatorModel": {
+      "mobileCallModel": {
+        "hasCallDayCount": 0,
+        "idleDays": 0,
+        "lastCallCurrentTimeDays": 0,
+        "lastCallTime": "string",
+        "nightCallCount": 0,
+        "noneCallDayCount": 0,
+        "thisCallTime": "string",
+        "totalCallCount": 0,
+        "totalDayCount": 0
+      },
+      "mobileContactsModelList": [
+        {
+          "callCount": "string",
+          "callRank": 0,
+          "callRecords": "string",
+          "contactName": "string",
+          "lastContactTime": "string",
+          "number": "string",
+          "tradeAddress": "string"
+        }
+      ],
+      "mobileIdleModelList": [
+        {
+          "idleDays": 0,
+          "lastCallTime": "string",
+          "thisCallTime": "string"
+        }
+      ],
+      "mobileMultipleLoanModelList": [
+        {
+          "callInCount": 0,
+          "callInNumber": "string",
+          "callInSecond": "string",
+          "callInTime": "string",
+          "callType": "string",
+          "numberLabel": "string"
+        }
+      ],
+      "mobileNightCallModelList": [
+        {
+          "callNumber": "string",
+          "callSecond": "string",
+          "callTime": "string",
+          "callType": "string",
+          "tradeAddress": "string"
+        }
+      ],
+      "mobileTalkModelList": [
+        {
+          "callInNumberCount": 0,
+          "callOutNumberCount": 0,
+          "talkMonth": "string",
+          "talkNumberCount": 0,
+          "totalNumberCount": 0
+        }
+      ]
+    },
+    "multipleLoanModel": {
+      "countByQuery": 0,
+      "loanRecordCount": 0,
+      "overdueDetailModelList": [
+        {
+          "loanAmount": 0,
+          "loanDate": "string",
+          "overdueMessage": "string",
+          "phone": "string"
+        }
+      ],
+      "overdueRecordCount": 0
+    },
+    "reportVersionModel": {
+      "reportId": "string",
+      "reportNumber": "string",
+      "reportTime": "string",
+      "result": "string",
+      "resultMessage": "string"
+    },
+    "riskRuleHitModelList": [
+      {
+        "ruleDesc": "string",
+        "tirggerTime": "string"
+      }
+    ],
+    "riskScoreModel": {
+      "riskScoreLinkOverdueRateModelList": [
+        {
+          "behaviorScoreLimit": "string",
+          "level": "string",
+          "overdueRate": "string",
+          "userCountRate": "string"
+        }
+      ],
+      "riskSyntheticalScoreModelList": [
+        {
+          "overdueRate": "string",
+          "scoreEnd": "string",
+          "scoreStart": "string"
+        }
+      ],
+      "syntheticalScore": "string"
+    },
+    "securitylModel": [
+      {
+        "caseType": "string",
+        "count": "string",
+        "level": "string",
+        "source": "string",
+        "time": "string",
+        "type": "string"
+      }
+    ],
+    "userFileModelList": [
+      {
+        "filePath": "string",
+        "id": "string",
+        "title": "string"
+      }
+    ],
+    "userModel": {
+      "age": 0,
+      "idNumber": "string",
+      "idNumberLocation": "string",
+      "phone": "string",
+      "phone3itemsResult": "string",
+      "phoneCarrier": "string",
+      "phoneLocation": "string",
+      "sex": "string",
+      "username": "string",
+      "workLevel": "string",
+      "workName": "string"
+    }
+  },
+  "message": "string",
+  "success": true
+}
+		 </pre>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="error-example">异常示例</a></legend>
+		</fieldset>
+<div class="site-text">
+			<p>返回json格式数据，code不等于0</p>
+		</div>
+		<pre class="layui-code">
+{
+  "code": 5003,//业务异常状态码
+  "message": "string",//错误消息 
+}
+		 </pre>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="error-code">错误码说明</a></legend>
+		</fieldset>
+		<table id="t-error-code" ></table>
+
+		<fieldset class="layui-elem-field layui-field-title">
+			<legend><a name="faq">FAQ</a></legend>
+		</fieldset>
+		</div>
+
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../common/globle.js"></script>
+		<script type="text/javascript" src="../../js/doc/doc-catalog.js"></script>
+		<script type="text/javascript" src="../../js/doc/risk-report.js"></script>
+	</body>
+
+</html>

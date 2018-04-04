@@ -1,0 +1,10 @@
+{"code":0,"msg":"","count":1000,"data":[
+{"apiName":"开发环境测试网关","apiMessage":"http://118.190.67.197:7200/v3/risk/submit/fraud/v1"},
+{"apiName":"生产环境网关","apiMessage":"https://risk.credan.com/v3/risk/submit/fraud/v1"},
+{"apiName":"接口中文名称","apiMessage":"提交风控申请（反欺诈）"},
+{"apiName":"调用方式","apiMessage":"POST"},
+{"apiName":"参数提交方式","apiMessage":"Form提交"},
+{"apiName":"返回值类型","apiMessage":"String"},
+{"apiName":"接口执行方式","apiMessage":"异步执行，返回风控结果"},
+{"apiName":"描述信息","apiMessage":"提交用户基本信息，返回风控编号，请仔细阅读文档"}
+]}
