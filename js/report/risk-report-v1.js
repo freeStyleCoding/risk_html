@@ -276,6 +276,54 @@ layui.use(['table', 'layer', 'common'], function() {
 			size: 'sm',
 			limit: multipleLoanListData.length
 		});
+		        //线下小贷 
+		var debtSeverityModelData = data.debtSeverityModel; 
+		table.render({ 
+			elem: "#t-debt-severity",
+			height: debtSeverityModelData.length > 7 ? 300 : '', 
+			cols: [ 
+				[{ 
+					align: 'left', 
+					title: '线下小贷', 
+					colspan: 15 
+				}], 
+				[{ 
+					field: 'item', 
+					title: '评估项' 
+				}, { 
+					title: '取值' 
+				}] 
+			], 
+			data: debtSeverityModelData, 
+			size: 'sm', 
+			limit: debtSeverityModelData.length 
+		}); 
+		//多头借贷 
+		var crawlMultiloanModelData = data.crawlMultiloanModel; 
+		table.render({ 
+			elem: "#t-crawl-multiloan", 
+			height: crawlMultiloanModelData.length > 7 ? 300 : '', 
+			cols: [ 
+				[{ 
+					align: 'left', 
+					title: '多头借贷', 
+					colspan: 15 
+				}], 
+				[{ 
+					field: 'item', 
+					title: '评分项' 
+				}, { 
+					field: 'score', 
+					title: '评分' 
+				}, { 
+					field: 'healthReferScore', 
+					title: '健康参考值' 
+				}] 
+			], 
+			data: crawlMultiloanModelData, 
+			size: 'sm', 
+			limit: crawlMultiloanModelData.length 
+		}); 
 		//设备信息
 		var deviceModelListData = data.deviceModelList;
 		table.render({
@@ -319,12 +367,148 @@ layui.use(['table', 'layer', 'common'], function() {
 				}, {
 					field: 'value',
 					title: '取值'
+				}, {
+					field: 'healthReferScore',
+					title: '健康参考值'
 				}]
 			],
 			data: consumptionPowerModelListData,
 			size: 'sm',
 			limit: consumptionPowerModelListData.length
 		});
+		        //刑事案底 
+		var securitylModelData = data.securitylModel; 
+		table.render({
+			elem: "#t-security", 
+			height: securitylModelData.length > 7 ? 300 : '', 
+			cols: [ 
+				[{ 
+					align: 'left', 
+					title: '刑事案底', 
+					colspan: 15 
+				}], 
+				[{ 
+					field: 'item', 
+					title: '评估项' 
+				}, { 
+					field: 'score', 
+					title: '取值'
+				}] 
+			], 
+			data: securitylModelData, 
+			size: 'sm', 
+			limit: securitylModelData.length 
+		}); 
+		var zhengxinBlackListModelListData = data.zhengxinBlackListModelList; 
+		table.render({ 
+			elem: "#t-zhengxin-black", 
+			height: zhengxinBlackListModelListData.length > 7 ? 500 : '', 
+			cols: [ 
+				[{ 
+					align: 'left', 
+					title: '法律涉诉', 
+					colspan: 15 
+				}], 
+				[{ 
+					field: 'dataType', 
+					title: '数据类型', 
+					minWidth: 100, 
+					templet: function(zhengxinBlackListModelListData) { 
+			if (!zhengxinBlackListModelListData.dataType){ 
+			    return ''; 
+			    } 
+			   switch (zhengxinBlackListModelListData.dataType) { 
+	       	       case 'cpws': 
+			            return '裁判文书'; 
+		            case 'zxgg': 
+           			    return '执行公告'; 
+		            case 'sxgg': 
+		                return '失信公告'; 
+		            case 'ktgg': 
+			            return '开庭公告'; 
+		            case 'fygg': 
+			            return '法院公告'; 
+		            case 'ajlc': 
+			            return '案件流程信息'; 
+		            case 'bgt': 
+			            return '曝光台'; 
+		            default: 
+			            break; 
+		                } 
+		        return zhengxinBlackListModelListData.dataType 
+	                } 
+				}, { 
+					field: 'sortTimeString', 
+					title: '立案时间', 
+					minWidth: 130
+				}, { 
+					field: 'body', 
+					title: '内容', 
+					minWidth: 200 
+				}, { 
+					field: 'pname', 
+					title: '被执行人姓名', 
+					minWidth: 120 
+				}, { 
+					field: 'court', 
+					title: '执行法院名称', 
+					minWidth: 150 
+				}, { 
+					field: 'caseState', 
+					title: '案件状态', 
+					minWidth: 100, 
+			        templet: function(zhengxinBlackListModelListData) { 
+			        if (!zhengxinBlackListModelListData.caseState){ 
+			    return ''; 
+			    } 
+			   switch (zhengxinBlackListModelListData.caseState) { 
+	       	       case '0': 
+			            return '执行中'; 
+		            case '1': 
+           			    return '已结案'; 
+		            default: 
+			            break; 
+		                } 
+		        return zhengxinBlackListModelListData.caseState 
+	                } 
+				}, { 
+					field: 'execMoney', 
+					title: '执行标的', 
+					minWidth: 120 
+				}, { 
+					field: 'lxqk', 
+					title: '履行情况', 
+					minWidth: 120 
+ 
+				}, { 
+					field: 'yjCode', 
+					title: '依据文号', 
+					minWidth: 200 
+				}, { 
+					field: 'jtqx', 
+					title: '失信被执行人行为具体情形', 
+					minWidth: 280 
+				}, { 
+					field: 'yiwu', 
+					title: '生效法律文书确定的义务', 
+					minWidth: 200 
+				}, { 
+					field: 'caseType', 
+					title: '案件类别' 
+				}, { 
+					field: 'caseNo', 
+					title: '案号', 
+					minWidth: 200 
+				}, { 
+					field: 'province', 
+					title: '省份', 
+					minWidth: 100 
+				}] 
+			], 
+			data: zhengxinBlackListModelListData, 
+			size: 'sm',
+			limit: zhengxinBlackListModelListData.length 
+		}); 
 		//运营商报告
 		var mobileOperator = data.mobileOperatorModel;
 		/**运营商通话信息*/

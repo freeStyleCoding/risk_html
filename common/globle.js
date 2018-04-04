@@ -17,8 +17,8 @@ layui.config({
 
 layui.data('risk-server', {
 	key: 'rootPath',
-	value: 'https://risk.credan.com'
-	//value: 'http://127.0.0.1:7200'
+	//value: 'https://risk.credan.com'
+	value: 'http://127.0.0.1:7200'
 	//value: 'http://118.190.67.197:7200'
 });
 

@@ -28,7 +28,7 @@ layui.define(['layer'], function(exports) {
 		loadError: function(message, timeout) {
 			timeout = typeof(timeout) == "undefined" ? 30 * 1000 : timeout;
 			message = typeof(message) == "undefined" ? "正在拼命加载中..." : message;
-			layer.msg(message, {
+			ayer.msg(message, {
 				time: timeout,
 				shade: 0.8,
 				icon: 5

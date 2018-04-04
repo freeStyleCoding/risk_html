@@ -1,4 +1,0 @@
-{"code":0,"msg":"","count":1000,"data":[
-{"field":"rawDataId","fieldName":"运营商数据ID","fieldType":"String","required":"是","explain":"提交风控需要传递参数"},
-{"field":"redirectUrl","fieldName":"运营商授权跳转URL","fieldType":"String","required":"是","explain":"打开链接完成运营商授权完整流程"}
-]}
