@@ -1,0 +1,9 @@
+{"code":0,"msg":"","count":1000,"data":[
+{"code":"0","explain":"访问成功"},
+{"code":"-1","explain":"其他错误"},
+{"code":"101","explain":"业务错误"},
+{"code":"4001","explain":"参数校验失败"},
+{"code":"4041","explain":"接口不存在"},
+{"code":"5002","explain":"系统错误"},
+{"code":"5003","explain":"操作频繁"}
+]}

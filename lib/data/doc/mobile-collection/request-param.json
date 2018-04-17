@@ -1,0 +1,8 @@
+{"code":0,"msg":"","count":1000,"data":[
+{"field":"companyCode","fieldName":"公司编码","fieldType":"String","required":"是","explain":"分配给商户的编码"},
+{"field":"method","fieldName":"服务编码","fieldType":"String","required":"是","explain":"开通服务的编码"},
+{"field":"noticeUrl","fieldName":"通知回调URL","fieldType":"String","required":"是","explain":"通知调用方的url，post请求，参数是json，返回SUCCESS或FAIL"},
+{"field":"userName","fieldName":"真实姓名","fieldType":"String","required":"是","explain":"申请人真实姓名"},
+{"field":"idNumber","fieldName":"身份证号码","fieldType":"String","required":"是","explain":"申请人身份证号码"},
+{"field":"phone","fieldName":"手机号","fieldType":"String","required":"是","explain":"申请人手机号"}
+]}

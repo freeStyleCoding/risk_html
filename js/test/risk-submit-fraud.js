@@ -5,24 +5,14 @@ layui.use(['layer', 'form', 'common'], function() {
 		common = layui.common;
 
 	var riskRootPath = layui.data('risk-server').rootPath;
-	var submitUrl = riskRootPath + "/v3/risk/submit/fraud";
+	var submitUrl = riskRootPath + "/v3/risk/submit/fraud/v1";
 	$("input[name='requestId']").val(Math.random().toString(36).substr(2));
 
 	form.on('submit(risk-submit-fraud)', function(data) {
 		console.log(data);
 		function callback(data) {
-			layui.data('risk', {
-				key: 'riskNumber',
-				value: data.riskNumber
-			});
-			layer.confirm('点击确认将新打开风控报告页面，风控编号' + data.riskNumber, {
-				btn: ['取消', '查看风控报告']
-			}, function() {
-				layer.msg('已取消', {
-					icon: 1
-				});
-			}, function() {
-				window.open("risk-report-v1.html?risknumber=" + data.riskNumber);
+			layer.alert("风控编号："+data, {
+				shade: 0.8
 			});
 		}
 		$.ajax({
