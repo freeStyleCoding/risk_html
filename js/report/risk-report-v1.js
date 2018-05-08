@@ -260,7 +260,7 @@ layui.use(['table', 'layer', 'common'], function() {
 					field: 'number',
 					title: '手机号码'
 				}, {
-					field: 'type',
+					field: 'level',
 					title: '黑名单类型'
 				}, {
 					field: 'source',
