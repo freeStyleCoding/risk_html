@@ -349,6 +349,7 @@ layui.use(['table', 'layer', 'common'], function() {
 					field: 'item', 
 					title: '评估项' 
 				}, { 
+				    field: 'score',
 					title: '取值' 
 				}] 
 			], 
