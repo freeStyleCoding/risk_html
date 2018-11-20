@@ -36,7 +36,7 @@ layui.use(['table', 'layer', 'common'], function() {
 			if(typeof res === 'string') {
 				res = JSON.parse(res);
 			}
-			if(res.success) {
+			if(res.code == 0) {
 				try {
 					loadData(res.data);
 				} catch(e) {
